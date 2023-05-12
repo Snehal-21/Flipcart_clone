@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+</head>
+<body>
+    <form onsubmit="addproduct(event)">
+        <label>product image</label></br>
+        <input type="text" id="furl"/></br>
+        <label>product Name</label></br>
+        <input type="text" id="fname"/></br>
+        <label>product Price</label></br>
+        <input type="number" id="fprice"/></br>
+        <input type="submit" value="Add product"/>
+
+    </form>
+    <script>
+        function addproduct(event){
+            event.preventDefault();
+
+            var url=document.getElementById("furl").value;
+            var name=document.getElementById("fname").value;
+            var price=document.getElementById("fprice").value;
+            var finaldata={url,name,price};
+            
+            var Flipcartls=JSON.parse(localStorage.getItem("FlipcartProduct")) || [];
+            Flipcartls.push(finaldata);
+            localStorage.setItem("FlipcartProduct",JSON.stringify(Flipcartls));
+            alert("product added successfully");
+
+            
+        }
+    </script>
+</body>
+</html>

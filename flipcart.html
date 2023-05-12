@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #screen{
+            width:100%;
+            height:1000px;
+            /* border:1px solid red; */
+        }
+        #navbar{
+            height:60px;
+            width:100%;
+            border:1px solid blue;
+            background-color: rgb(40,116,240);
+        }
+        #mainnav{
+            width:80%;
+            height:100%;
+            /* border:1px solid red; */
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        #navleft{
+            width:60%;
+            height:100%;
+            /* border:1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #navleft>div:nth-child(1){
+            width:20%;
+            height:80%;
+            margin-top: 5px;
+            /* border:1px solid green; */
+        }
+        #navleft>div:nth-child(2){
+            width:77%;
+            height:100%;
+            /* border:1px solid green; */
+            background-color:white;
+        }
+        #navleft>div:nth-child(2)>input{
+            width:90%;
+            height:100%;
+            padding-left: 10px;
+            border:none;
+        }
+        #navleft>div:nth-child(2)>i{
+            background-color: white;
+            font-size: 20px;
+            color:blue;
+            margin-left: 20px;
+        }
+        #navleft>div:nth-child(1)>img{
+            width:100%;
+            height:80%;
+        }
+        #navright{
+            width:39%;
+            height:100%;
+            /* border:1px solid red; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #navright>div{
+            height:100%;
+            /* border:1px solid green; */
+            display: flex;
+            align-items: center;
+            color:white;
+            font-size: 18px;
+            font-weight: bold;
+            /* padding-left: 20px;
+            padding-right: 20px; */
+        }
+        #navright>div:nth-child(1)>button{
+            width:100px;
+            height:30px;
+            color:blue;
+            border: none;
+            font-weight: bold;
+        }
+        #navright>div:nth-child(4)>p>span{
+            margin-right: 10px;
+        }
+        #body1{
+            width:80%;
+            /* height:100px; */
+            margin: auto;
+            /* border:1px solid green; */
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        #body1>div{
+            height:100%;
+            /* border:1px solid red; */
+        }
+        #body1>div>div:nth-child(1){
+            height:80px;
+            /* border:1px solid gold; */
+        }
+        #body1>div>div:nth-child(2){
+            height:20px;
+            padding-left:20px;
+            padding-right: 20px;
+            /* border:1px solid gold; */
+            text-align: center;
+            font-size: 18px;
+        }
+        #body1>div>div:nth-child(1)>img{
+            width:100%;
+            height:100%;
+        }
+        .body2{
+            /* height:500px; */
+            width:100%;
+            /* border:1px solid red; */
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            box-shadow: 8px 10px 18px rgb(194, 191, 191);
+        }
+        .body2>div{
+            width:16%;
+            height:450px;
+            /* border:1px solid green; */
+        }
+        .body2>div>div:nth-child(1){
+            height:300px;
+            width:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .body2>div>div:nth-child(1)>img{
+            height:80%;
+            width:60%;
+        }
+        .body2>div>div:nth-child(2){
+            height:150px;
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* border:1px solid red; */
+        }
+        .body2>div>div:nth-child(2)>p:nth-child(1){
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .body2>div>div:nth-child(2)>p:nth-child(2){
+            /* color:green; */
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .body2>div>div:nth-child(2)>p:nth-child(3){
+            color:grey;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #footer{
+            height:350px;
+            width:100%;
+            border:1px solid red;
+            background-color: rgb(23,35,55);
+        }
+        #footer>div:nth-child(1){
+            height:200px;
+            width:100%;
+            margin: auto;
+            /* border:1px solid red; */
+            border-bottom: 1px solid grey;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 30px;
+        }
+        #footer>div:nth-child(1)>div{
+            width:20%;
+            height:100%;
+            /* border:1px solid white; */
+        }
+        #footer>div:nth-child(1)>div>h4{
+            color:grey;
+            margin-bottom: 10px;
+        }
+        #footer>div:nth-child(1)>div>p{
+            color:white;
+            margin-bottom: 5px;
+        }
+        #footer>div:nth-child(2){
+            height:80px;
+            width:100%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            /* border:1px solid red; */
+            align-items: center;
+        }
+        #footer>div:nth-child(2)>div>p{
+            color:white;
+            font-size: 18px;
+        }
+        #footer>div:nth-child(2)>div>p>span{
+            color:yellow;
+            margin-right: 20px;
+        }
+        #switch>h1{
+            /* border:2px solid red; */
+            font-size: 25px;
+            cursor: pointer;
+            /* color:white; */
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+       
+        @media screen and (max-width:650px){
+            #mainnav{
+                width:98%;
+            }
+            #navleft{
+                width:80%;
+            }
+            #navleft>div:nth-child(2){
+                display: flex;
+            }
+            #navleft>div:nth-child(2)>i{
+                margin-top: 5px;
+                margin-right: 10px;
+            }
+            #navright{
+                width:15%;
+            }
+            #navright>div:nth-child(1){
+                width:100%;
+            }
+            #navright>div:nth-child(2){
+                display: none;
+            }
+            #navright>div:nth-child(3){
+                display: none;
+            }
+            #navright>div:nth-child(4){
+                display: none;
+            }
+            #body1{
+                width:98%;
+                flex-wrap: wrap;
+                margin-top: 10px;
+            }
+            #body1>div{
+                width:25%;
+                /* border:3px solid green; */
+                margin-bottom: 10px;
+            }
+            #body1>div:nth-child(9){
+                display: none;
+            }
+            #body1>div:nth-child(10){
+                display: none;
+            }
+            .body2{
+                flex-wrap: wrap;
+            }
+            .body2>div{
+                width:48%;
+                /* display: flex; */
+                /* flex-wrap: wrap; */
+                /* border: 3px solid gold; */
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="screen">
+        <div id="navbar">
+            <div id="mainnav">
+                <div id="navleft">
+                    <div>
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png" alt="logo"/>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Search for products brands and more.."/>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <div id="navright">
+                    <div id="switch"><button onclick="window.location.href=`./login.html`" style="cursor: pointer;">Login</button></div>
+                    <div><p>Become a Seller</p></div>
+                    <div><p>More</p></div>
+                    <div><p><span><i class="fa-solid fa-cart-shopping"></i></span>Cart</p></div>
+                    <div id="logout" style="height:30px;width:60px;padding-top: 20px;color:red">Logout</div>
+
+                </div>
+            </div>
+        </div>
+        <div id="body1">
+            <div>
+                <div><img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100"/></div>
+                <div><p>Grocery</p></div>
+            </div>
+            <div>
+                <div><img src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100"/></div>
+                <div onclick="window.location.href=`./multipleproduct.html`" style="cursor: pointer;"><p>Mobiles</p></div>
+            </div>
+            <div>
+                <div><img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/0d75b34f7d8fbcb3.png?q=100"/></div>
+                <div><p>Fashion</p></div>
+            </div>
+            <div>
+                <div><img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100"/></div>
+                <div><p>Electronics</p></div>
+            </div>
+            <div>
+                <div><img src="https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100"/></div>
+                <div><p>Home</p></div>
+            </div>
+            <div>
+                <div><img src="https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100"/></div>
+                <div><p>Appliances</p></div>
+            </div>
+            <div>
+                <div><img src="https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100"/></div>
+                <div><p>Travel</p></div>
+            </div>
+            <div>
+                <div><img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100"/></div>
+                <div><p>Top Offers</p></div>
+            </div>
+            <div>
+                <div><img src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100"/></div>
+                <div><p>Beauty</p></div>
+            </div>
+            <div>
+                <div><img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/05d708653beff580.png?q=100"/></div>
+                <div><p>Bike</p></div>
+            </div>
+        </div>
+        <div class="body2">
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/xif0q/cases-covers/back-cover/j/i/6/mycas-black-vv-y35-qcase-original-imagj87uwxzarrzk.jpeg?q=70">
+                </div>
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                
+            </div>
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/l0sgyvk0/cases-covers/back-cover/c/b/s/zapsa03tpu01691-zapcase-original-imagcgffegrnhh6x.jpeg?q=70">
+                </div>  
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                </div>
+            
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/klgx0280/printer/y/d/k/g2012-canon-original-imagyh8sqwuqzk7y.jpeg?q=70">
+                </div>  
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                </div>
+           
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/kokdci80/dslr-camera/v/e/x/z-24-200mm-z5-nikon-original-imag2zuekuxgxsgg.jpeg?q=70">
+                </div>  
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                </div>
+           
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/jwzabgw0/trimmer/y/4/r/sensitive-touch-expert-veet-original-imafhjh5ah7vf9zc.jpeg?q=70">
+                </div>  
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                </div>
+         
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/l4x2rgw0/monitor/n/y/y/q24i-20-full-hd-23-8-66eegac3in-lenovo-original-imagfpgxzsk8ef26.jpeg?q=70">
+                </div>    
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                </div>
+           
+        </div>
+
+        <div class="body2">
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/l111lzk0/cycle/m/r/e/xc-900-grey-lite-26-15-5-cradiac-21-gear-120-original-imagczuzpxeweczm.jpeg?q=70">
+                </div>
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                
+            </div>
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/kx50gi80/pen/h/z/k/119766-flair-original-imag9nzubznagufg.jpeg?q=70">
+                </div>  
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                </div>
+            
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/kjuby4w0/deodorant/v/c/d/400-one8-intense-fresh-deo-pack-of-2-200ml-x-2-2-perfume-body-original-imafzbn4nv2zhccp.jpeg?q=70">
+                </div>  
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                </div>
+           
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/jwqpocw0/microphone-accessory/8/j/s/easy-way-wireless-handheld-bluetooth-mic-with-speaker-bluetooth-original-imafgtg9zgcwcdzg.jpeg?q=70">
+                </div>  
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                </div>
+           
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/k6fd47k0/nut-dry-fruit/p/z/7/200-100-natural-california-pouch-happilo-original-imafzvw2tcazeur6.jpeg?q=70">
+                </div>  
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                </div>
+         
+            <div>
+                <div>
+                    <img src="https://rukminim1.flixcart.com/image/200/200/kql8sy80/lipstick/7/m/y/21-sara-s-favorite-sensational-liquid-matte-pack-of-3-touch-of-original-imag4kgnbmynydnw.jpeg?q=70">
+                </div>    
+                    <div>
+                        <p>Plain Cases & Covers</p>
+                        <p>Under Rs.169</p>
+                        <p>For All Top Models</p>
+                    </div>
+                </div>
+           
+        </div>
+
+        <div id="footer">
+            <div>
+                <div>
+                    <h4>ABOUT</h4>
+                    <p>Contact Us</p>
+                    <p>About Us</p>
+                    <p>Careers</p>
+                    <p>Flipcart Stories</p>
+                    <p>Press</p>
+                </div>
+                <div>
+                    <h4>HELP</h4>
+                    <p>Payments</p>
+                    <p>Shipping</p>
+                    <p>Cancellation & Returns</p>
+                    <p>FAQ</p>
+                </div>
+                <div>
+                    <h4>CONSUMER POLICY</h4>
+                    <p>Return Policy</p>
+                    <p>Terms Of Use</p>
+                    <p>Security</p>
+                    <p>Privacy</p>
+                    <p>Sitemap</p>
+                </div>
+                <div>
+                    <h4>SOCIAL</h4>
+                    <p>Facebook</p>
+                    <p>Twitter</p>
+                    <p>YouTube</p>
+                </div>
+            </div>
+            <div>
+                <div><p><span><i class="fa-solid fa-bag-shopping"></i></span>Become a Seller</p></div>
+                <div><p><span><i class="fa-solid fa-star"></i></span>Advertise</p></div>
+                <div><p><span><i class="fa-solid fa-gift"></i></span>Gift Cards</p></div>
+                <div><p><span><i class="fa-solid fa-circle-question"></i></span>Help Center</p></div>
+                <div><p>@2007-2023 Flipcart.com</p></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload=function(){
+            // alert("working");
+            var user=JSON.parse(localStorage.getItem("loginflipcart"));
+            if(!!user){
+                var div=document.getElementById("switch");
+                var divlogout=document.getElementById("logout");
+                var button=`<button onclick="logout()">Logout</button>`;
+                var name=`<h1>${user.uname}</h1>`;
+                div.innerHTML=name;
+                divlogout.innerHTML=button;
+            }
+            else{
+                alert("user absent")
+            }
+        }
+        function logout(){
+        alert("logout successful.")
+        localStorage.removeItem("loginflipcart");
+        window.location.reload();
+    }
+    </script>
+</body>
+</html>
