@@ -22,7 +22,7 @@
         #navbar{
             height:60px;
             width:100%;
-            border:1px solid blue;
+            /* border:1px solid blue; */
             background-color: rgb(40,116,240);
         }
         #mainnav{
@@ -476,7 +476,7 @@
             var productfromls=JSON.parse(localStorage.getItem("FlipcartProduct"));
             console.log(productfromls)
             for(var i=0;i<productfromls.length;i++){
-                 product+=` <div class="products"><div class="product-left">
+                 product+=` <div onClick ='redirect(${JSON.stringify(productfromls[i])})' class="products"><div class="product-left">
                 <div class="left-img">
                     <img src="${productfromls[i].url}" />
                 </div>
@@ -512,6 +512,11 @@
         alert("logout successful.")
         localStorage.removeItem("loginflipcart");
         window.location.reload();
+    }
+    function redirect(product){
+        var singleproduct=JSON.stringify(product);
+        localStorage.setItem("singleProduct",singleproduct);
+        window.location.href='./singleproduct.html'
     }
     </script>
 </body>

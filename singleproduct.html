@@ -110,7 +110,6 @@
         }
         #body1>div{
             height:100%;
-            /* border:1px solid red; */
         }
         #body1>div>div:nth-child(1){
             height:80px;
@@ -174,34 +173,46 @@
         }
         #cart{
             width:100%;
-            border:1px solid red;
+            /* border:1px solid red; */
+            
+            box-shadow: 8px 10px 18px grey;
+            /* border-top: 1px solid rgb(214, 210, 210); */
+            padding-top: 10px;
             display: flex;
             justify-content: center;
+            margin-top: 40px;
         }
         .maincart{
             width:90%;
-            border:1px solid green;
+            /* border:1px solid green; */
             display: flex;
             height:500px;
         }
         .cart-left{
             width:40%;
             height:100%;
-            border:1px solid blue;
+            /* border:1px solid blue; */
+            display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
         .cart-image{
             height:80%;
-            width:90%;
-
+            width:80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgb(206, 204, 204);
+            margin-bottom: 20px;
         }
         .cart-image>img{
-            width:100%;
-            height:100%;
+            width:80%;
+            height:90%;
         }
         .cartbuttons{
             height:20%;
-            width:100%;
+            width:80%;
             display: flex;
             justify-content: space-evenly;
         }
@@ -212,6 +223,9 @@
             color:white;
             border:none;
         }
+        .cartbuttons>button:nth-child(1)>i{
+            margin-right: 10px;
+        }
         .cartbuttons>button:nth-child(2){
             width:45%;
             height:50px;
@@ -219,25 +233,49 @@
             color:white;
             border: none;
         }
+        .cartbuttons>button:nth-child(2)>i{
+            margin-right: 10px;
+        }
           .cart-right{
             width:60%;
             height:100%;
-            border:1px solid blue;
+            /* border:1px solid blue; */
             border:none;
+            padding-left:30px;
+            padding-top:20px;
         }
         .cart-right>h4{
             font-size: 25px;
             margin-bottom: 7px;
         }
-        .cart-right>p:nth-child(1){
+        .cart-right>p:nth-child(2){
              color:grey;
             font-size: 15px;
-            margin-bottom: 20px;
+            /* margin-bottom: 20px; */
         }
-         .cart-right>p:nth-child(2){
-             font-size: 18px;
+         .cart-right>p:nth-child(3){
+             font-size: 17px;
+            color:green;
+            margin-top: 5px;
+         }
+          .cart-right>p:nth-child(4){
+             font-size: 20px;
             color:grey;
             margin-top: 10px;
+         }
+          .cart-right>p:nth-child(4)>span{
+             font-size: 17px;
+            color:green;
+            margin-top: 10px;
+            margin-left: 10px;
+         }
+          .cart-right>p:nth-child(5){
+             font-size: 22px;
+            margin-top: 10px;
+         }
+         .cart-right>ul{
+            margin-top: 10px;
+            font-size: 17px;
          }
          @media screen and (max-width:650px){
             #mainnav{
@@ -442,5 +480,74 @@
             </div>
          </div>
     </div>
+    <script>
+        window.onload=function(){
+            var user=JSON.parse(localStorage.getItem("loginflipcart"));
+            if(!!user){
+                var div=document.getElementById("switch");
+                var divlogout=document.getElementById("logout");
+            var product=JSON.parse(localStorage.getItem("singleProduct"));
+            var divproduct=document.getElementById("cart");
+            var structure=` <div class="maincart">
+                <div class="cart-left">
+                <div class="cart-image">
+                    <img src="${product.url}" />
+                </div>
+                <div class="cartbuttons">
+                    <button onclick='cart(${JSON.stringify(product)})'><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
+                    <button><i class="fa-solid fa-bolt"></i>Buy Now</button>
+                </div>
+            </div>
+            <div class="cart-right">
+                 <h4>${product.name}</h4>
+                    <p>2,11,424 Ratings & 11,191 Reviews</p>
+                    <p>Extra Rs.7901 off</p>
+                    <p>${product.price}<del>Rs.69,900</del><span>11% off</span></p>
+                    <p>Available Offers</p>
+                     <ul>
+                        <li>128 GB ROM</li>
+                        <li>15.49 cm (6.1 inch) Super Retina XDR Display</li>
+                        <li>12MP + 12MP | 12 MP front camera</li>
+                        <li>A15 Bionic Chip Processor</li>
+                        <li>Brand Warranty for 1 Year</li>
+                    </ul>
+            </div>
+            </div>`;
+            var button=`<button onclick="logout()">Logout</button>`;
+            divproduct.innerHTML=structure;
+            divlogout.innerHTML=button;
+            var name=`<h1>${user.uname}</h1>`;
+                div.innerHTML=name;
+        }
+         else{
+                alert("user absent")
+            }
+        }
+         function logout(){
+        alert("logout successful.")
+        localStorage.removeItem("loginflipcart");
+        window.location.reload();
+    }
+        function cart(product){
+            alert("working");
+            var currentuser=JSON.parse(localStorage.getItem("loginflipcart"));
+            var userdata=JSON.parse(localStorage.getItem("flipcartusers"));
+            for(var i=0;i<userdata.length;i++){
+                if(currentuser.uemail==userdata[i].uemail){
+                    alert("got");
+                    if(userdata[i].cartproducts===undefined){
+                        userdata[i].cartproducts=[product];
+                    }
+                    else{
+                        userdata[i].cartproducts.push(product);
+                    }
+                    alert("product added t the cart");
+                    window.location.href='./cart.html';
+                }
+            }
+            localStorage.setItem("flipcartusers",JSON.stringify(userdata));
+            console.log(flipcartusers,"flipcartusers here");
+        }
+    </script>
 </body>
 </html>
