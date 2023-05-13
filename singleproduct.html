@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-    <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
-    <style>
-        * {
+    <title>single product</title>
+     <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
+</head>
+<style>
+     * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -128,7 +128,8 @@
             width:100%;
             height:100%;
         }
-        #footer{
+
+         #footer{
             height:400px;
             width:100%;
             background-color:#f2e9e9;
@@ -171,80 +172,74 @@
             border-radius: 10px;
             margin-bottom: 30px;
         }
-        #body{
+        #cart{
             width:100%;
-            display: flex;
-            flex-direction: column;
-            /* border:3px solid red; */
-        }
-        .products{
-            width:85%;
-            /* border:5px solid green; */
-            margin: auto;
-            display: flex;
-            height:300px;
-            /* flex-direction: column; */
-            margin-top: 50px;
-            border-top: 1px solid grey;
-        }
-        .product-left{
-            width:70%;
-            height:300px;
-            /* border:1px solid green; */
-            display: flex;
-            flex-direction: row;
-        }
-        .left-img{
-            width:40%;
-            height:100%;
+            border:1px solid red;
             display: flex;
             justify-content: center;
-            align-items: center;
-            /* border:2px solid blue; */
         }
-        .left-img>img{
-            width:80%;
+        .maincart{
+            width:90%;
+            border:1px solid green;
+            display: flex;
+            height:500px;
+        }
+        .cart-left{
+            width:40%;
+            height:100%;
+            border:1px solid blue;
+            justify-content: center;
+        }
+        .cart-image{
             height:80%;
+            width:90%;
+
         }
-         .left-info{
+        .cart-image>img{
+            width:100%;
+            height:100%;
+        }
+        .cartbuttons{
+            height:20%;
+            width:100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .cartbuttons>button:nth-child(1){
+            width:45%;
+            height:50px;
+            background-color: rgb(255,159,0);
+            color:white;
+            border:none;
+        }
+        .cartbuttons>button:nth-child(2){
+            width:45%;
+            height:50px;
+            background-color: rgb(251,100,27);
+            color:white;
+            border: none;
+        }
+          .cart-right{
             width:60%;
             height:100%;
-            /* border:2px solid gold; */
-            padding: 20px;
+            border:1px solid blue;
+            border:none;
         }
-        .left-info>h4{
+        .cart-right>h4{
             font-size: 25px;
             margin-bottom: 7px;
         }
-         .left-info>p{
-            color:grey;
+        .cart-right>p:nth-child(1){
+             color:grey;
             font-size: 15px;
             margin-bottom: 20px;
-         }
-         .left-info>ul{
-            font-size: 15px;
-         }
-         .product-right{
-            width:18%;
-            height:300px;
-            /* border:1px solid green; */
-            padding: 20px;
         }
-        .product-right>h1{
-            font-size: 25px;
-        }
-         .product-right>p{
-            font-size: 18px;
+         .cart-right>p:nth-child(2){
+             font-size: 18px;
             color:grey;
             margin-top: 10px;
-        }
-        .product-right>p>span{
-            color:green;
-            font-size: 15px;
-            margin-left: 10px;
-            
-        }
-        @media screen and (max-width:650px){
+         }
+         @media screen and (max-width:650px){
             #mainnav{
                 width:98%;
             }
@@ -289,26 +284,8 @@
             #body1>div:nth-child(10){
                 display: none;
             }
-            .products{
-            width:95%;
         }
-            .product-left{
-            width:80%;
-            height:300px;
-            /* border:1px solid green; */
-            display: flex;
-            flex-direction: row;
-        }
-            .product-right{
-            width:10%;
-            height:300px;
-            /* border:1px solid green; */
-            padding: 20px;
-        }
-        }
-    </style>
-</head>
-
+</style>
 <body>
     <div id="screen">
         <div id="navbar">
@@ -404,31 +381,33 @@
                 </div>
             </div>
         </div>
-        <div id="body">
-            <div class="products">
-            <div class="product-left">
-                <div class="left-img">
+        <div id="cart">
+            <div class="maincart">
+                <div class="cart-left">
+                <div class="cart-image">
                     <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="image" />
                 </div>
-                <div class="left-info">
-                    <h4>mobiles</h4>
+                <div class="cartbuttons">
+                    <button><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
+                    <button><i class="fa-solid fa-bolt"></i>Buy Now</button>
+                </div>
+            </div>
+            <div class="cart-right">
+                 <h4>mobiles</h4>
                     <p>2,11,424 Ratings & 11,191 Reviews</p>
-                    <ul>
+                    <p>Extra Rs.7901 off</p>
+                    <p><del>Rs.69,900</del><span>11% off</span></p>
+                    <p>Available Offers</p>
+                     <ul>
                         <li>128 GB ROM</li>
                         <li>15.49 cm (6.1 inch) Super Retina XDR Display</li>
                         <li>12MP + 12MP | 12 MP front camera</li>
                         <li>A15 Bionic Chip Processor</li>
                         <li>Brand Warranty for 1 Year</li>
                     </ul>
-                </div>
-            </div>
-            <div class="product-right">
-                <h1>Rs.</h1>
-                <p><del>Rs.69,900</del><span>11% off</span></p>
             </div>
             </div>
         </div>
-       
         <div id="footer">
             <div>
              <div>
@@ -463,57 +442,5 @@
             </div>
          </div>
     </div>
-    <script>
-        window.onload=function(){
-            // alert("working");
-            var user=JSON.parse(localStorage.getItem("loginflipcart"));
-            if(!!user){
-                var div=document.getElementById("switch");
-                var divlogout=document.getElementById("logout");
-                var divproduct=document.querySelector("#body");
-
-            var product="";
-            var productfromls=JSON.parse(localStorage.getItem("FlipcartProduct"));
-            console.log(productfromls)
-            for(var i=0;i<productfromls.length;i++){
-                 product+=` <div class="products"><div class="product-left">
-                <div class="left-img">
-                    <img src="${productfromls[i].url}" />
-                </div>
-                <div class="left-info">
-                    <h4>${productfromls[i].name}</h4>
-                    <p>2,11,424 Ratings & 11,191 Reviews</p>
-                    <ul>
-                        <li>128 GB ROM</li>
-                        <li>15.49 cm (6.1 inch) Super Retina XDR Display</li>
-                        <li>12MP + 12MP | 12 MP front camera</li>
-                        <li>A15 Bionic Chip Processor</li>
-                        <li>Brand Warranty for 1 Year</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-right">
-                <h1>Rs.${productfromls[i].price}</h1>
-                <p><del>Rs.69,900</del><span>11% off</span></p>
-            </div></div>`;
-            }
-            var button=`<button onclick="logout()">Logout</button>`;
-            // console.log(finaldata,"finaldta here");
-            divproduct.innerHTML=product;
-            divlogout.innerHTML=button;
-
-               
-            }
-            else{
-                alert("user absent")
-            }
-        }
-        function logout(){
-        alert("logout successful.")
-        localStorage.removeItem("loginflipcart");
-        window.location.reload();
-    }
-    </script>
 </body>
-
 </html>
